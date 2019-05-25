@@ -48,13 +48,28 @@ The Makefile is at FreeFileSync_10.12_Source/FreeFileSync/Source/Makefile. We ne
 
 Now everything is almost ready. However, depending on your version of libssh2 and libcurl, you may encounter several errors. The best way to fix this is to install the latest version of these two libraries. However, I am not very familiar with them and do not want to change the system default version, so I fix the code when I get compilation errors. 
 
-In "afs/libcurl/curl_wrap.h", comment the line 78 and 120. Basically, we wipe out "ZEN_CHECK_CASE_FOR_CONSTANT(CURLE_OBSOLETE51);" and "ZEN_CHECK_CASE_FOR_CONSTANT(CURLE_RECURSIVE_API_CALL);". 
+In "afs/libcurl/curl_wrap.h", comment the line 78 and 120. Basically, we wipe out 
+```
+ZEN_CHECK_CASE_FOR_CONSTANT(CURLE_OBSOLETE51); 
+and ZEN_CHECK_CASE_FOR_CONSTANT(CURLE_RECURSIVE_API_CALL);. 
+```
 
-In "afs/sftp.cpp", add 
+In "afs/sftp.cpp", add at line 58
+```
+#define MAX_SFTP_OUTGOING_SIZE 30000
+#define MAX_SFTP_READ_SIZE 30000
+```
+
+In "afs/sftp.cpp", add at line 1662
+```
+#define LIBSSH2_SFTP_DEFAULT_MODE      -1
+```
+
+I found the above consts from header files in newer versions of libssh2 and libcurl. 
 
 ## 6. Compile:
 
-Run "make" in folder FreeFileSync_10.12_Source/FreeFileSync/Source
+Run "make" in folder FreeFileSync_10.12_Source/FreeFileSync/Source. It will take roughly 10 minutes to compile on a i7 machine. 
 
 The binary should be waiting for you in FreeFileSync_10.12_Source/FreeFileSync/Build/Bin. 
 
