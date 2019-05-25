@@ -9,7 +9,7 @@ https://freefilesync.org/download/FreeFileSync_10.12_Source.zip.
 
 Note wget does not work with this URL. You can manually specify a version number to get the source code of an earlier version
 
-You also need to get a Resources.zip from an earlier version of the source code, e.g., 10.12,  https://freefilesync.org/download/FreeFileSync_10.11_Source.zip. This is probably a bug that the developer forgets to include it. Without it, the program cannot find the icons needed for the UI. The Resouces.zip is in FreeFileSync_10.11_Source/FreeFileSync/Build. Simply copy and paste the zip to the same place in the 10.12 folder. 
+You also need to get a Resources.zip from an earlier version of the source code, e.g., 10.11,  https://freefilesync.org/download/FreeFileSync_10.11_Source.zip. This is probably a bug that the developer forgets to include it. Without it, the program cannot find the icons needed for the UI. The Resouces.zip is in FreeFileSync_10.11_Source/FreeFileSync/Build. Simply copy and paste the zip to the same place in the 10.12 folder. 
 
 ## 1. Install a newer version of gcc
 
