@@ -9,14 +9,13 @@ https://freefilesync.org/download/FreeFileSync_10.12_Source.zip.
 
 Note wget does not work with this URL. You can manually specify a version number to get the source code of an earlier version
 
+You also need to get a Resources.zip from an earlier version of the source code, e.g., 10.12,  https://freefilesync.org/download/FreeFileSync_10.11_Source.zip. This is probably a bug that the developer forgets to include it. Without it, the program cannot find the icons needed for the UI. The Resouces.zip is in FreeFileSync_10.11_Source/FreeFileSync/Build. Simply copy and paste the zip to the same place in the 10.12 folder. 
 
 ## 1. Install a newer version of gcc
 
 FreeFileSync requires a c++ compiler that supports c++2a. The default version of gcc on Ubuntu is 7.4.0 and does not work. I followed the instruction at: https://solarianprogrammer.com/2016/10/07/building-gcc-ubuntu-linux/ to build and install the gcc 9.1.0.
 
 If you follow the steps correctly, you should be able to run "gcc-9.1 -v" without any error. 
-
-You also need to get a Resources.zip from an earlier version of the source code, e.g., 10.12,  https://freefilesync.org/download/FreeFileSync_10.11_Source.zip. This is probably a bug that the developer forgets to include it. Without it, the program cannot find the icons needed for the UI. The Resouces.zip is in FreeFileSync_10.11_Source/FreeFileSync/Build. Simply copy and paste the zip to the same place in the 10.12 folder. 
 
 ## 2. Install wxWidgets
 
